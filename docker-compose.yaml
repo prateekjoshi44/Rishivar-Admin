@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  rishivar-admin-react-app:
+    image: rishivar-admin-react-app
+    container_name: rishivar-admin-react-app
+    build: .
+    networks:
+      - mysql-common
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 50m
+
+networks:
+  mysql-common:
+    external: true
